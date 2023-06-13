@@ -46,12 +46,12 @@ We performed some benchmarks (2,7 GHz Quad-Core Intel Core i7) on the `keccak256
 * Empty Input:
   * `keccak256("")` -> N ms  
 * Short Fixed-Length Inputs (1, 2, 4, 8, 16, 32)
-  * `keccak256("a")` -> N ms
-  * `keccak256("aa")` -> N ms
-  * `keccak256("aaaa")` -> N ms
-  * `keccak256("aaaaaaaa")` -> N ms
-  * `keccak256("aaaaaaaaaaaaaaaa")` -> N ms
-  * `keccak256("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")` -> N ms
+  * `keccak256("a" ^ 1)` -> N ms
+  * `keccak256("a" ^ 2)` -> N ms
+  * `keccak256("a" ^ 4)` -> N ms
+  * `keccak256("a" ^ 8)` -> N ms
+  * `keccak256("a" ^ 16)` -> N ms
+  * `keccak256("a" ^ 32)` -> N ms
 * Long Fixed-Length Inputs (256, 512, 1024) 
   * `keccak256("a" ^ 256)` -> N ms
   * `keccak256("a" ^ 512)` -> N ms
