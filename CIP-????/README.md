@@ -36,29 +36,10 @@ The changes would require a single function to be added to Plutus.
 While the `keccak256` function might be implemented in on-chain scripts, doing so would be computationally unfeasible. 
 
 ## Path to Proposed
-To move this Draft to Proposed, we need to cost the `keccak256` function.
+This Draft is ready to be moved to Proposed.
 
 ### Trustworthiness of Implementations
 The implementation of `keccak256` is based on the version found in the [cardano-base](https://github.com/input-output-hk/cardano-base/blob/master/cardano-crypto-class/src/Cardano/Crypto/Hash/Keccak256.hs) library.
-
-### Costing of function
-We performed some benchmarks (2,7 GHz Quad-Core Intel Core i7) on the `keccak256` that can be used to finalize the costing:
-* Empty Input:
-  * `keccak256("")` -> N ms  
-* Short Fixed-Length Inputs (1, 2, 4, 8, 16, 32)
-  * `keccak256("a" ^ 1)` -> N ms
-  * `keccak256("a" ^ 2)` -> N ms
-  * `keccak256("a" ^ 4)` -> N ms
-  * `keccak256("a" ^ 8)` -> N ms
-  * `keccak256("a" ^ 16)` -> N ms
-  * `keccak256("a" ^ 32)` -> N ms
-* Long Fixed-Length Inputs (256, 512, 1024) 
-  * `keccak256("a" ^ 256)` -> N ms
-  * `keccak256("a" ^ 512)` -> N ms
-  * `keccak256("a" ^ 1024)` -> N ms
-* Recursive hashing
-  * `keccak256(keccak256("a"))` -> N ms
-  * `keccak256(keccak256(keccak256("a")))` -> N ms
 
 ## Backward Compatibility
 The addition of `keccak256` is backward compatible and will not interfere with existing functions within Plutus.
